@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
 
-/* Reset values + Body*/
+/* Reset values + var*/
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +11,12 @@
 
 :root {
     --bg-h2-btn: hsl(0, 0%, 95%);
+    --orange: hsl(31, 77%, 52%);
+    --darkcyan: hsl(184, 100%, 22%);
+    --darkercyan: hsl(179, 100%, 13%);
 }
 
+/* Work on Main elements */
 body {
     display: flex;
     flex-direction: column;
@@ -22,33 +26,34 @@ body {
     background-color: var(--bg-h2-btn);
 }
 
-/* Work on Main */
 #main {
     display: flex;
     justify-content: center;
     margin: 0 25%;
     border-radius: 5px;
     overflow: hidden;
-    /* max-width: 500px; */
-    width: 800px;
-    height: 400px;
 }
 
 /* Work on Boxes */
 .box {
-    padding: 40px;
+    max-width: 250px;
+    max-height: 700px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .sedans-box {
-    background-color: hsl(31, 77%, 52%);
+    background-color: var(--orange);
 }
 
 .suvs-box {
-    background-color: hsl(184, 100%, 22%);
+    background-color: var(--darkcyan);
 }
 
 .luxury-box {
-    background-color: hsl(179, 100%, 13%);
+    background-color: var(--darkercyan);
 }
 
 img {
@@ -60,22 +65,22 @@ h2 {
     color: var(--bg-h2-btn);
     font-family: 'Big Shoulders Display', sans-serif;
     text-transform: uppercase;
-    margin: 25px 0;
     font-size: 33px;
 }
 
 p {
     color: hsla(0, 0%, 100%, 0.75);
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 22px;
     font-weight: lighter;
+    margin-top: -10px;
 }
 
 /* Work on Buttons */
 button {
     font-family: 'Lexend Deca', sans-serif;
-    margin-top: 70px;
+    margin-top: 30px;
     background-color: var(--bg-h2-btn);
     border-radius: 30px;
     padding: 8px 10px;
@@ -92,25 +97,54 @@ button:active {
 }
 
 .sedans {
-    color: hsl(31, 77%, 52%);
+    color: var(--orange);
 }
 
 .sedans:active {
-    background-color: hsl(31, 77%, 52%);
+    background-color: var(--orange);
 }
 
 .suvs {
-    color: hsl(184, 100%, 22%);
+    color: var(--darkcyan);
 }
 
-.suvs:active{
-    background-color: hsl(184, 100%, 22%);
+.suvs:active {
+    background-color: var(--darkcyan);
 }
 
 .luxury {
-    color: hsl(179, 100%, 13%);
+    color: var(--darkercyan);
 }
 
 .luxury:active {
-    background-color: hsl(179, 100%, 13%);
+    background-color: var(--darkercyan);
+}
+
+/* Work on Footer */
+.attribution {
+    position: fixed;
+    bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: hsl(228, 45%, 44%);
+}
+
+/* On Mobile */
+@media (max-width: 375px) {
+    body {
+        height: 100%;
+    }
+
+    #main {
+        flex-direction: column;
+        margin: 50px -10px;
+    }
+
+    button {
+        margin-top: -10px;
+    }
+
+    .hidden {
+        display: none;
+    }
 }
